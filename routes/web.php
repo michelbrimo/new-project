@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\Sendmail;
+use App\Mail\auth;
 use Illuminate\Support\Facades\Route;
 use Symfony\Component\Routing\Annotation\Route as AnnotationRoute;
 
@@ -14,8 +16,5 @@ use Symfony\Component\Routing\Annotation\Route as AnnotationRoute;
 |
 */
 
-Route::get('/hello', function () {
-    return view('welcome');
-});
+Route::get('/', [Sendmail::class, 'mail']);
 
-//this is a test run
